@@ -50,6 +50,8 @@ Now, everytime you call `#doSomething()` you will get logged:
 20:18:06.417 [main] WARN com.github.x3333.dagger.aop.log.Interceptor_MyClass - #doSomething(): workDone in 12ms
 ```
 
+*`workDone` is the method's return.*
+
 License
 -------
 
