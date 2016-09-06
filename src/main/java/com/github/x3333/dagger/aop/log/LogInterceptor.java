@@ -22,6 +22,14 @@ import org.slf4j.LoggerFactory;
 import com.google.common.base.Joiner;
 
 /**
+ * MethodInterceptor for {@link Log} annotation.
+ * 
+ * <p>
+ * It logs to SLF4J every time an annotated method is called.
+ * 
+ * <p>
+ * If {@link Log#trackTime()} is <code>true</code>, it will log how long it took to execute.
+ * 
  * @author Tercio Gaudencio Filho (terciofilho [at] gmail.com)
  */
 public class LogInterceptor implements MethodInterceptor {
@@ -35,6 +43,7 @@ public class LogInterceptor implements MethodInterceptor {
 
     final Log log = invocation.annotation(Log.class);
 
+    // Execute the method and track time
     final long startTime = System.currentTimeMillis();
     final Object result = invocation.proceed();
     final long endTime = System.currentTimeMillis();

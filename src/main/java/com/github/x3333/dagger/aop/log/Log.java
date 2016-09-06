@@ -20,6 +20,17 @@ import java.lang.annotation.Documented;
 import java.lang.annotation.Retention;
 import java.lang.annotation.Target;
 
+/**
+ * Methods annotated by {@link Log} will generate a SLF4J entry every time the method has been called.
+ *
+ * <p>
+ * You can define the logger level using {@link #value() #value(Log.Level.XXXXX)}.
+ * 
+ * <p>
+ * It can also track how long it took to run by {@link #trackTime() #trackTime(true)}.
+ * 
+ * @author Tercio Gaudencio Filho (terciofilho [at] gmail.com)
+ */
 @Documented
 @Retention(RUNTIME)
 @Target(METHOD)

@@ -22,8 +22,11 @@ import javax.lang.model.element.ExecutableElement;
 import com.google.auto.service.AutoService;
 
 /**
+ * Method Interceptor Handler for {@link Log} and {@link LogInterceptor}.
+ * 
+ * This binds both and is registered as {@link InterceptorHandler} so can be used by the dagger-aop processor.
+ * 
  * @author Tercio Gaudencio Filho (terciofilho [at] gmail.com)
- *
  */
 @AutoService(InterceptorHandler.class)
 public class LogInterceptorHandler implements InterceptorHandler {
