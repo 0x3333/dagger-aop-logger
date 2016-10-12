@@ -17,13 +17,12 @@ import com.github.x3333.dagger.aop.InterceptorHandler;
 
 import java.lang.annotation.Annotation;
 
-import javax.lang.model.element.ExecutableElement;
-
 import com.google.auto.service.AutoService;
 
 /**
  * Method Interceptor Handler for {@link Log} and {@link LogInterceptor}.
  * 
+ * <p>
  * This binds both and is registered as {@link InterceptorHandler} so can be used by the dagger-aop processor.
  * 
  * @author Tercio Gaudencio Filho (terciofilho [at] gmail.com)
@@ -39,16 +38,6 @@ public class LogInterceptorHandler implements InterceptorHandler {
   @Override
   public Class<LogInterceptor> methodInterceptorClass() {
     return LogInterceptor.class; // The MethodInterceptor itself
-  }
-
-  @Override
-  public String validateMethod(final ExecutableElement methodElement) {
-    // You can validate the method if necessary
-
-    // if (!methodElement.getSimpleName().toString().startsWith("log")) {
-    // return "Log methods must start with 'log'!";
-    // }
-    return null;
   }
 
 }
